@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="./vue-diretiva.css">
+  <title>Vue-Template</title>
+</head>
+<body>
+
+  <div id="app">
+    <h1>Texto da lista com V-FOR IN</h1>
+    <ul>
+      <li v-for="item in produtos"> {{ item.nome }} </li>
+    </ul>
+    <h1>Texto da lista com V-FOR OF</h1>
+    <ul>
+      <li v-for="item of produtos"> {{ item.nome }} </li>
+    </ul>
+    <h1>Texto da lista com V-FOR OF com INDEX</h1>
+    <ul>
+      <li v-for="(item, index) of produtos"> Produto: {{index}} - {{ item.nome }} </li>
+    </ul>
+    <h1>Lista de Objetos com V-FOR OF com Chave</h1>
+    <ul>
+      <li v-for="(item, chave) in objetos"> {{ chave }} : {{ item }} </li>
+    </ul>
+    <h1>Lista de Objetos com V-FOR OF com Chave, Valor e INDEX</h1>
+    <ul>
+      <li v-for="(item, chave, index) in objetos"> {{ index }} - {{ chave }} : {{ item }} </li>
+    </ul>
+    <h1>Interando números</h1>
+    <ul>
+      <li v-for="(valor, index) in 30"> position: {{ index }} - Valor: {{ valor }} </li>
+    </ul>
+  </div>
+  <script src="./vue-diretiva.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="./vue-component.css">
+  <title>Vue-Template</title>
+</head>
+<body>
+
+  <div id="app">
+    <!-- <p v-if="mostrar">Rendering 001</p>
+    <p v-else>Rendering 002</p>
+    <p v-if="nota === 'A'">A - 0001</p>
+    <p v-else-if="nota === 'B'">B -0002</p>
+    <p v-else-if="nota === 'C'">C -0003</p>
+    <p v-else>SEM VALOR PARA O CAMPO</p>
+    <input v-model="nota" placeholder="Nota">
+    <button @click="mostrarTemp">M-Temp</button> -->
+
+    <!-- <ul>
+      <li> lista 0001 </li>
+      <li> lista 0002 </li>
+      <template v-if="mostrar">
+        <li> lista 0003 </li>
+        <li> lista 0004 </li>
+      </template>
+    </ul> 
+    <button @click="mostrarTemp">Visualizar</button>  -->
+
+    <!-- <template v-if="login">
+      <label>USER</label>
+      <input type="text" placeholder="Nome do USER" key="campo-user">
+    </template>
+    <template v-else>
+      <label>EMAIL</label>
+      <input type="text" placeholder="EMAIL do USER" key="campo-email">
+    </template> -->
+
+    <p v-show="mostrar">Mostrando V-SHOW</p>
+
+    <button @click="mostrarTemp">Visualizar</button>
+  </div>
+  <script src="./vue-component.js"></script>
+</body>
+</html>
