@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://unpkg.com/vue"></script>
+  <link rel="stylesheet" href="./vue.css">
+  <title>Vue</title>
+</head>
+<body>
+
+  <div id="app">
+    <div class="caixa"
+        :class="{coral: aplicarClasse}"
+        @click="aplicarClasse = !aplicarClasse">
+    </div>
+    <div class="caixa" :class="nomeDaClasse"></div>
+    <div class="caixa" :class="classCSS" @click="aplicarClasse = !aplicarClasse"></div>
+    <input v-model="nomeDaClasse" placeholder="Nome da Classe COR">
+  </div>
+  <script src="./vue.js"></script>
+</body>
+</html>
