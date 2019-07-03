@@ -7,7 +7,8 @@
 <body>
 
   <div id="app">
-    <h1>Texto da lista com V-FOR IN</h1>
+    <!-- USER File Vue-diretiva.js -->
+    <!-- <h1>Texto da lista com V-FOR IN</h1>
     <ul>
       <li v-for="item in produtos"> {{ item.nome }} </li>
     </ul>
@@ -30,8 +31,27 @@
     <h1>Interando números</h1>
     <ul>
       <li v-for="(valor, index) in 30"> position: {{ index }} - Valor: {{ valor }} </li>
+    </ul> -->
+
+    <!-- <h1>FOR with IF FULL</h1>
+    <ul>
+      <li v-for='item in users' v-if='!item.competed'>
+        <a href="#">{{item.name}}</a>
+      </li>
     </ul>
+    <h1>FOR with IF COMPLETED</h1>
+    <ul>
+      <li v-for='item in tarefasIncompletas'>
+        <a href="#">{{item.id}} {{item.name}} {{item.competed ? 'Completado' : 'Incompleta'}}</a>
+      </li>
+    </ul> -->
+    <h3>Mutabilidade</h3>
+    <ul>
+      <li v-for='item in users'> {{item.id }} - {{item.name}} - {{item.completed}} </li>
+    </ul>
+    <button @click='addUsers'>New Users</button>
   </div>
-  <script src="./vue-diretiva.js"></script>
+  <!-- <script src="./vue-diretiva.js"></script> -->
+  <script src="./vue-for-if.js"></script>
 </body>
 </html>

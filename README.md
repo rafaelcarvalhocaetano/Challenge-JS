@@ -1,3 +1,5 @@
 # VUE-JS
 
-- Aplicação Vue.
+- Diretivas
+- Computer
+- Watchers
