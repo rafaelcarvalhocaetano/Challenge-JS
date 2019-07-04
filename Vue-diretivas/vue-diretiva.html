@@ -45,13 +45,18 @@
         <a href="#">{{item.id}} {{item.name}} {{item.competed ? 'Completado' : 'Incompleta'}}</a>
       </li>
     </ul> -->
-    <h3>Mutabilidade</h3>
+    <!-- <h3>Mutabilidade</h3>
     <ul>
       <li v-for='item in users'> {{item.id }} - {{item.name}} - {{item.completed}} </li>
     </ul>
-    <button @click='addUsers'>New Users</button>
+    <button @click='addUsers'>New Users</button> -->
+    <h2 ref="ms">{{meuTitulo}}</h2>
+    <button @click="alterar">Alterar</button>
   </div>
+  <div id="app2"></div>
   <!-- <script src="./vue-diretiva.js"></script> -->
-  <script src="./vue-for-if.js"></script>
+  <!-- <script src="./vue-for-if.js"></script> -->
+  <script src="./vue.js"></script>
+
 </body>
 </html>
