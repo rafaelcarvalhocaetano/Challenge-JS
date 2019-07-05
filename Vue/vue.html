@@ -11,14 +11,18 @@
 <body>
 
   <div id="app">
-    <div class="caixa"
+    <!-- <div class="caixa"
         :class="{coral: aplicarClasse}"
         @click="aplicarClasse = !aplicarClasse">
     </div>
     <div class="caixa" :class="nomeDaClasse"></div>
     <div class="caixa" :class="classCSS" @click="aplicarClasse = !aplicarClasse"></div>
-    <input v-model="nomeDaClasse" placeholder="Nome da Classe COR">
+    <input v-model="nomeDaClasse" placeholder="Nome da Classe COR"> -->
+    <h1>{{ textInfo }}</h1>
+    <button @click="mudar">UPDATING</button>
+    <button @click="destruir">Destroi</button>
   </div>
+  <div id="app1"></div>
   <script src="./vue.js"></script>
 </body>
 </html>
