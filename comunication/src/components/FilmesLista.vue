@@ -29,18 +29,27 @@
     </div>
     <!-- coluna 2 -->
     <div class="col-4">
-      <FilmesListaItenInfo/>
+      <FilmesListaItenInfo
+        v-if="!isEdited"
+        :filme="filme_selected"
+        @editarFilme="editar(filme)"/>
+
+      <FilmesListaItenEditar
+        v-else
+        :filme="filme_selected"/>
     </div>
   </div>
 </template>
 <script>
-import FilmesListaIten from './FilmesListaIten.vue'
-import FilmesListaItenInfo from './FilmesListaItenInfo.vue'
+import FilmesListaIten from './FilmesListaIten.vue';
+import FilmesListaItenInfo from './FilmesListaItenInfo.vue';
+import FilmesListaItenEditar from './FilmesListaItenEditar.vue';
 
 export default {
   components: {
     FilmesListaIten,
-    FilmesListaItenInfo
+    FilmesListaItenInfo,
+    FilmesListaItenEditar
   },
   data() {
     return {
@@ -51,14 +60,21 @@ export default {
         {id: 4, titulo: 'Vinga 0004', ano: 2015},
         {id: 5, titulo: 'Vinga 0005', ano: 2016}
       ],
-      filme_selected: undefined
+      filme_selected: undefined,
+      isEdited: false
     }
   },
   methods: {
     AplicarCss(filme) {
+      console.log("TCL: AplicarCss -> filme", filme)
       return {
         active: this.filme_selected && this.filme_selected.id === filme.id
       }
+    },
+    editar(item) {
+      console.log("TCL: editar -> filme", item)
+      this.isEdited = true;
+      this.filme_selected = item;
     }
   }
 }

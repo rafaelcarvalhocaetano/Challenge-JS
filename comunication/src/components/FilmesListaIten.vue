@@ -6,31 +6,18 @@
 </template>
 
 <script>
+import { eventBus } from './../main';
 export default {
   props: {
      filme: {
       type: Object,
       required: true
     }
-    // titulo: {
-    //   type: String,
-    //   required: true
-    //   },
-    //   ano: {
-    //     type: Number,
-    //     required: true
-    //   }
   },
   methods: {
-    selecionar(e) {
-      this.$emit('selected', this.filme)
+    selecionar() {
+      eventBus.selecionaFilme(this.filme)
     }
   }
-  // computed: {
-  //   filmesTituloConcatenado() {
-  //     return `Titulo: ${this.titulo}`
-  //   }
-  // }
 }
 </script>
-
