@@ -23,7 +23,7 @@
             v-for="item in filmes" :key="item.id"
             :filme="item"
             :class="AplicarCss(item)"
-            @selected="filme_selected = $event" />
+            @selecionaFilme="filme_selected = $event" />
 
       </ul>
     </div>
@@ -32,7 +32,7 @@
       <FilmesListaItenInfo
         v-if="!isEdited"
         :filme="filme_selected"
-        @editarFilme="editar(filme)"/>
+        @editarFilme="editar"/>
 
       <FilmesListaItenEditar
         v-else
@@ -41,15 +41,16 @@
   </div>
 </template>
 <script>
+import { eventBus } from './../main';
 import FilmesListaIten from './FilmesListaIten.vue';
-import FilmesListaItenInfo from './FilmesListaItenInfo.vue';
 import FilmesListaItenEditar from './FilmesListaItenEditar.vue';
+import FilmesListaItenInfo from './FilmesListaItenInfo.vue';
 
 export default {
   components: {
     FilmesListaIten,
-    FilmesListaItenInfo,
-    FilmesListaItenEditar
+    FilmesListaItenEditar,
+    FilmesListaItenInfo
   },
   data() {
     return {
@@ -66,16 +67,27 @@ export default {
   },
   methods: {
     AplicarCss(filme) {
-      console.log("TCL: AplicarCss -> filme", filme)
       return {
         active: this.filme_selected && this.filme_selected.id === filme.id
       }
     },
     editar(item) {
-      console.log("TCL: editar -> filme", item)
       this.isEdited = true;
       this.filme_selected = item;
+    },
+    atualizarFilmes(event) {
+      const i = this.filmes.findIndex(x => x.id === e.id);
+      // na posição i retire 1 objeto e adicione outro objeto
+      this.splice(i, 1, e);
+      this.filme_selected = undefined;
+      this.isEdited = false;
     }
+  },
+  created() {
+    eventBus.$on('selected', (item) => {
+      this.filme_selected = item;
+    });
+    eventBus.$on('atualizarFilme', this.atualizarFilmes);
   }
 }
 </script>

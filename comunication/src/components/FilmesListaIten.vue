@@ -15,7 +15,7 @@ export default {
     }
   },
   methods: {
-    selecionar() {
+    selecionar(event) {
       eventBus.selecionaFilme(this.filme)
     }
   }

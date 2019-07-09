@@ -6,8 +6,11 @@ Vue.config.productionTip = false;
 
 export const eventBus = new Vue({
   methods: {
-    selecionaFilme(item) {
-      this.$emit('selected', item);
+    selecionarFilme(filmeSelecionado) {
+      this.$emit('selecionarFilme', filmeSelecionado)
+    },
+    atualizarFilme(filmeAtualizado) {
+      this.$emit('atualizarFilme', filmeAtualizado)
     }
   }
 });
